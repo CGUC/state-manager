@@ -1,0 +1,19 @@
+{
+  "name": "@skybunk/state-manager",
+  "version": "0.0.1",
+  "description": "manage generic skybunk state across all platforms",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CGUC/state-manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CGUC/state-manager/issues"
+  },
+  "homepage": "https://github.com/CGUC/state-manager#readme"
+}
