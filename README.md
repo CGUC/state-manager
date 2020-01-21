@@ -1,4 +1,4 @@
-# Skybunk State Manager
+# Skybunk State Manager [![CircleCI](https://circleci.com/gh/CGUC/state-manager.svg?style=svg)](https://circleci.com/gh/CGUC/state-manager)
 
 This is a node module which can be used across web, mobile, and admin tools to handle logic and manage thte local state of the client.
 
