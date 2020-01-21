@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "code-format": "npx eslint ./ --fix && npx prettier \"**/*.js\" --write"
+    "code-format": "npx eslint ./ --fix && npx prettier \"**/*.js\" --write",
+    "code-format-check": "npx eslint ./ && npx prettier \"**/*.js\" --check"
   },
   "jest": {
     "transform": {
