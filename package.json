@@ -4,7 +4,13 @@
   "description": "manage generic skybunk state across all platforms",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "code-format": "npx eslint ./ --fix && npx prettier \"**/*.js\" --write"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -15,5 +21,36 @@
   "bugs": {
     "url": "https://github.com/CGUC/state-manager/issues"
   },
-  "homepage": "https://github.com/CGUC/state-manager#readme"
+  "homepage": "https://github.com/CGUC/state-manager#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.3",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jest": "^23.6.0",
+    "husky": "^4.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^10.0.1",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^6.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
 }
