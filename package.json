@@ -4,7 +4,7 @@
   "description": "manage generic skybunk state across all platforms",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "code-format": "npx eslint ./ --fix && npx prettier \"**/*.js\" --write",
     "code-format-check": "npx eslint ./ && npx prettier \"**/*.js\" --check"
   },

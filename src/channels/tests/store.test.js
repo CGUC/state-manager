@@ -1,5 +1,7 @@
+import channels from '../store';
+
 describe('Channel Store', () => {
-  it('works', () => {
-    expect(true).toEqual(true);
+  it('properly exports channels object', () => {
+    expect(channels).toBeDefined();
   });
 });
