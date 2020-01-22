@@ -1,3 +1,5 @@
-export default class ChannelStore {
+class ChannelStore {
   // TODO
 }
+
+export default new ChannelStore();
