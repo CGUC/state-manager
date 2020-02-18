@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/CGUC/state-manager#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
@@ -35,10 +36,16 @@
     "husky": "^4.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^10.0.1",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.4",
     "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@types/jest": "^25.1.1",
     "eslint-config-prettier": "^6.9.0"
   },
   "husky": {
