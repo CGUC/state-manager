@@ -1,6 +1,5 @@
 import { observable, computed } from 'mobx';
-import { observer } from 'mobx-react';
-import { ApiClient } from '../api/ApiClient';
+import ApiClient from '../api/ApiClient';
 
 export interface ChannelObject {
   id: String;
@@ -8,7 +7,6 @@ export interface ChannelObject {
   description?: String;
 }
 
-@observer
 export class ChannelStore {
   @observable
   selectedChannelId: String;
@@ -16,38 +14,38 @@ export class ChannelStore {
   @observable
   channelList: Array<ChannelObject>;
 
-  constructor(id: String){
+  constructor(id: String) {
     this.selectedChannelId = id;
-    //this.getChannels();
+    // this.getChannels();
   }
 
-  toggleSubscription(channelId: String){
-    //getSubscribedChannels from UserStore
-    //if channelId lives in user's subscribedChannels
-      //add channelId to user's subscribedChannels
-    // else
-      //remove channelId
-    /*
+  // toggleSubscription(channelId: String) {
+  // getSubscribedChannels from UserStore
+  // if channelId lives in user's subscribedChannels
+  // add channelId to user's subscribedChannels
+  // else
+  // remove channelId
+  /*
     ApiClient.put(
       `/users/${user._id}`,
       user,
       {authorized: true}
     ).catch(err => console.error(err));
     */
-  }
+  // }
 
   selectChannel(channelId: String) {
     this.selectedChannelId = channelId;
   }
 
-  async getChannels(){
-    this.channelList = await ApiClient.get('/channels',  {authorized: true});
+  async getChannels() {
+    this.channelList = await ApiClient.get('/channels', { authorized: true });
   }
 
   @computed
-  get SortedChannels(): Array<ChannelObject>{
-    let sortedChannels = this.channelList;
-    let subscribedChannels: Array<String> = /*userStore.getSubscribedChannels*/ null;
+  get SortedChannels(): Array<ChannelObject> {
+    const sortedChannels = this.channelList;
+    const subscribedChannels: Array<String> = /* userStore.getSubscribedChannels */ null;
     sortedChannels.sort((a, b) => {
       if (a.id === 'all') return -1;
       if (b.id === 'all') return 1;
@@ -67,8 +65,6 @@ export class ChannelStore {
 
   @computed
   get SelectedChannel(): ChannelObject {
-    return this.channelList.find((channel) => {
-      channel.id === this.selectedChannelId
-    });
+    return this.channelList.find(channel => channel.id === this.selectedChannelId);
   }
 }
