@@ -13,5 +13,7 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["jest"],
-  "rules": {}
+  "rules": {
+    "import/no-cycle": 0
+  }
 }
