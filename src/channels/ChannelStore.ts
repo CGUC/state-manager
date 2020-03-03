@@ -20,7 +20,7 @@ class ChannelStore {
 
   toggleSubscription(channelId: String) {
     // getSubscribedChannels from UserStore
-    const {subscribedChannels} = this.rootStore.userStore.user;
+    const { subscribedChannels } = this.rootStore.userStore.user;
     if (subscribedChannels.includes(channelId)) {
       subscribedChannels.splice(subscribedChannels.indexOf(channelId), 1);
     } else {
@@ -45,7 +45,7 @@ class ChannelStore {
 
   @computed
   get SortedChannels(): Array<IChannelObject> {
-    const {subscribedChannels} = this.rootStore.userStore.user;
+    const { subscribedChannels } = this.rootStore.userStore.user;
     const sortedChannels = this.channelList.slice().sort((a, b) => {
       if (a.id === 'all') return -1;
       if (b.id === 'all') return 1;
